@@ -9,7 +9,12 @@ import { DataService } from '../data.service';
 export class TeamComponent implements OnInit {
 
   s:string;
-  users:Object;
+  /**
+   * any: It is a built-in data type in TypeScript 
+  which helps in describing the type of variable which we are unsure of while writing the code. *
+  **/
+ users: any;  
+
   constructor(private data:DataService) { }
 
   
