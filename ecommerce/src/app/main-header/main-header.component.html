@@ -1,3 +1,38 @@
+
+<!-- header -->
+<div class="header" id="home1">
+  <div class="container">
+    <div  *ngIf="!isLogin" class="w3l_login">
+      <a href="/register"  (click)="openDialog()" ata-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
+    </div>
+    <div  *ngIf="isLogin" class="w3l_login">
+       <p>Welcome User, <span class="username">{{welcomeUsername}}</span> </p>
+    </div>
+    <div class="w3l_logo">
+      <h1><a href="index.html">Wish Store<span>Your stores. Your place.</span></a></h1>
+    </div>
+    <div class="search">
+      <input class="search_box" type="checkbox" id="search_box">
+      <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
+      <div class="search_form">
+        <form action="#" method="post">
+          <input type="text" name="Search" placeholder="Search...">
+          <input type="submit" value="Send">
+        </form>
+      </div>
+    </div>
+    <div class="cart cart box_1 checkout-count-wrap"> 
+      <form action="#" method="post" class="last">        
+        <button class="w3view-cart" type="submit" (click)="openCheckoutModel()" name="submit" value="">
+          <p class="total_count_checkout">{{cart_qty}}</p>
+          <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>      
+        </button>
+      </form>   
+    </div>  
+  </div>
+</div>
+
+
 <!-- header modal -->
 <div class="modal fade" [ngClass]="[mainDialogType == 'login' ? 'login_dialog in' : '']" id="myModal88" tabindex="-1" role="dialog" aria-labelledby="myModal88"
   aria-hidden="true">
@@ -82,39 +117,6 @@
 </div>
 
 <!-- header modal -->
-<!-- header -->
-<div class="header" id="home1">
-  <div class="container">
-    <div  *ngIf="!isLogin" class="w3l_login">
-      <a href="#"  (click)="openDialog()" ata-toggle="modal" data-target="#myModal88"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a>
-    </div>
-    <div  *ngIf="isLogin" class="w3l_login">
-       <p>Welcome User, <span class="username">{{welcomeUsername}}</span> </p>
-    </div>
-    <div class="w3l_logo">
-      <h1><a href="index.html">Wish Store<span>Your stores. Your place.</span></a></h1>
-    </div>
-    <div class="search">
-      <input class="search_box" type="checkbox" id="search_box">
-      <label class="icon-search" for="search_box"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
-      <div class="search_form">
-        <form action="#" method="post">
-          <input type="text" name="Search" placeholder="Search...">
-          <input type="submit" value="Send">
-        </form>
-      </div>
-    </div>
-    <div class="cart cart box_1 checkout-count-wrap"> 
-      <form action="#" method="post" class="last">        
-        <button class="w3view-cart" type="submit" (click)="openCheckoutModel()" name="submit" value="">
-          <p class="total_count_checkout">{{cart_qty}}</p>
-          <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>      
-        </button>
-      </form>   
-    </div>  
-  </div>
-</div>
-
 
 
 
@@ -186,6 +188,8 @@
               <li><a href="codes.html">Short Codes</a></li>     
             </ul>
           </li>  
+          <li><a href="/register">Register</a></li>
+          <li><a href="/customerLogin">Login</a></li>
           <li *ngIf="isLogin"  (click)="logout()"><a href="javascript:void(0)">Logout</a></li>
         </ul>
       </div>

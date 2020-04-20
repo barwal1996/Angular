@@ -17,6 +17,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { IndexComponent } from './index/index.component';
 
 import { MainHeaderComponent } from './main-header/main-header.component';
+import { RegisterComponent } from './register/register.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
 
 
 
@@ -26,19 +28,28 @@ const appRoutes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'productList',component:ProductListComponent},
+     
       {path:'productDetails',component:ProductDetailsComponent},
       {path: 'addProduct',component:CreateProductComponent},
-      {path:'updateProduct',component:UpdateProductComponent}
+      
+  { path: 'productList',component:ProductListComponent},
+  
+      
     ]
   },
+  { path: 'productList',component:ProductListComponent},
+  {path:'details/:productId',component:ProductDetailsComponent},
+
+  {path:'update/:productId',component:UpdateProductComponent},
+  { path:"register",component:RegisterComponent},
+  { path: "customerLogin", component:CustomerLoginComponent},
   { path: 'login', component: LoginComponent , pathMatch: 'full'},
   { path: '', component: IndexComponent}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, LoginComponent, HeaderComponent, AboutComponent, LogoutComponent, CreateProductComponent, ProductListComponent, UpdateProductComponent, ProductDetailsComponent, IndexComponent,MainHeaderComponent
+    AppComponent, HomeComponent, LoginComponent, HeaderComponent, AboutComponent, LogoutComponent, CreateProductComponent, ProductListComponent, UpdateProductComponent, ProductDetailsComponent, IndexComponent,MainHeaderComponent, RegisterComponent, CustomerLoginComponent
   ],
   imports: [
     BrowserModule,  RouterModule.forRoot(appRoutes),

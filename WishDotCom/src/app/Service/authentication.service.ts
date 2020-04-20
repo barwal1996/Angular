@@ -23,11 +23,11 @@ import { Customer } from '../customer';
           console.log(!(customer === null))
           return !(customer === null)
         }
-        isCustomerLoggedIn() {
-          let customer = sessionStorage.getItem('phoneNo')
-          console.log(!(customer === null))
-          return !(customer === null)
-        }
+        // isCustomerLoggedIn() {
+        //   let customer = sessionStorage.getItem('phoneNo')
+        //   console.log(!(customer === null))
+        //   return !(customer === null)
+        // }
         logOut() {
           sessionStorage.removeItem('phoneNo')
         }

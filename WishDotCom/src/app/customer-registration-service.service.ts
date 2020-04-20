@@ -35,8 +35,8 @@ getCustomerByphoneNo(phoneNo:number): Observable<any> {
 }
 
 
-public doLogin(User):Observable<any>{
-  return this.http.post("http://localhost:9090/login",User,{responseType:'text' as 'json'});
+public doLogin(customer):Observable<any>{
+  return this.http.post("http://localhost:9090/login",customer,{responseType:'text' as 'json'});
 }
   }
   
